@@ -221,6 +221,42 @@ logger.error("Student not found with ID: {}", id);
 
 ---
 
+
+## Database Configuration
+
+This project uses **Spring Profiles** to separate production and testing databases.
+
+### MySQL (Production)
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/SSMS_System
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+> Replace `YOUR_DB_USERNAME` and `YOUR_DB_PASSWORD` with your actual credentials. **Do not commit passwords** to Git.
+
+### H2 (In-Memory, Testing)
+
+```properties
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.show-sql=true
+```
+
+* H2 database is used for fast integration and unit testing.
+* Spring Boot automatically switches between MySQL and H2 based on the active profile.
+
+---
+
+This section clearly documents your database setup, shows both MySQL and H2 configurations, and ensures no secret keys are pushed to Git. It’s safe for others to follow while keeping your credentials secure.
+
 ##  API Endpoints
 
 | Method | Endpoint                | Description                   |
