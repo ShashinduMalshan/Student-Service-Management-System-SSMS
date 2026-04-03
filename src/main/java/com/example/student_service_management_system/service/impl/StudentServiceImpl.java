@@ -8,6 +8,8 @@ import com.example.student_service_management_system.mapper.StudentMapper;
 import com.example.student_service_management_system.repository.StudentRepository;
 import com.example.student_service_management_system.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,44 +21,65 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
+    private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
+
     private final StudentRepository repo;
     private final StudentMapper studentMapper;
 
     @Override
     public StudentResponseDTO addStudent(StudentRequestDTO dto) {
+        logger.info("Adding new student with name: {}", dto.getName());
         Student student = studentMapper.toEntity(dto);
         student.setCreatedAt(LocalDateTime.now());
-        return studentMapper.toDTO(repo.save(student));
+        Student saved = repo.save(student);
+        logger.info("Student added with ID: {}", saved.getId());
+        return studentMapper.toDTO(saved);
     }
 
     @Override
     public StudentResponseDTO updateStudent(Long id, StudentRequestDTO dto) {
+        logger.info("Updating student with ID: {}", id);
         Student student = repo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+                .orElseThrow(() -> {
+                    logger.error("Student not found with ID: {}", id);
+                    return new ResourceNotFoundException("Student not found");
+                });
         studentMapper.updateEntity(dto, student);
         student.setUpdatedAt(LocalDateTime.now());
-        return studentMapper.toDTO(repo.save(student));
+        Student updated = repo.save(student);
+        logger.info("Student updated with ID: {}", updated.getId());
+        return studentMapper.toDTO(updated);
     }
 
     @Override
     public void deleteStudent(Long id) {
+        logger.info("Deleting student with ID: {}", id);
         if (!repo.existsById(id)) {
+            logger.error("Student not found for deletion with ID: {}", id);
             throw new ResourceNotFoundException("Student not found");
         }
         repo.deleteById(id);
+        logger.info("Student deleted with ID: {}", id);
     }
 
     @Override
     public Page<StudentResponseDTO> getAllStudents(int page, int size) {
+        logger.info("Fetching all students: page {}, size {}", page, size);
         Pageable pageable = PageRequest.of(page, size);
-        return repo.findAll(pageable)
+        Page<StudentResponseDTO> students = repo.findAll(pageable)
                 .map(studentMapper::toDTO);
+        logger.info("Fetched {} students", students.getNumberOfElements());
+        return students;
     }
 
     @Override
     public StudentResponseDTO getStudentById(Long id) {
+        logger.info("Fetching student with ID: {}", id);
         Student student = repo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+                .orElseThrow(() -> {
+                    logger.error("Student not found with ID: {}", id);
+                    return new ResourceNotFoundException("Student not found");
+                });
         return studentMapper.toDTO(student);
     }
 }
