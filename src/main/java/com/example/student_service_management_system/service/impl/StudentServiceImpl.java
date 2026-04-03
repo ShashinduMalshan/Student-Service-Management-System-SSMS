@@ -4,10 +4,10 @@ import com.example.student_service_management_system.dto.StudentRequestDTO;
 import com.example.student_service_management_system.dto.StudentResponseDTO;
 import com.example.student_service_management_system.entity.Student;
 import com.example.student_service_management_system.exception.ResourceNotFoundException;
+import com.example.student_service_management_system.mapper.StudentMapper;
 import com.example.student_service_management_system.repository.StudentRepository;
 import com.example.student_service_management_system.service.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -20,25 +20,22 @@ import java.time.LocalDateTime;
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repo;
-    private final ModelMapper modelMapper;
+    private final StudentMapper studentMapper;
 
     @Override
     public StudentResponseDTO addStudent(StudentRequestDTO dto) {
-        Student student = modelMapper.map(dto, Student.class);
+        Student student = studentMapper.toEntity(dto);
         student.setCreatedAt(LocalDateTime.now());
-        Student saved = repo.save(student);
-        return modelMapper.map(saved, StudentResponseDTO.class);
+        return studentMapper.toDTO(repo.save(student));
     }
 
     @Override
     public StudentResponseDTO updateStudent(Long id, StudentRequestDTO dto) {
         Student student = repo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
-
-        modelMapper.map(dto, student); // Updates fields automatically
+        studentMapper.updateEntity(dto, student);
         student.setUpdatedAt(LocalDateTime.now());
-        Student updated = repo.save(student);
-        return modelMapper.map(updated, StudentResponseDTO.class);
+        return studentMapper.toDTO(repo.save(student));
     }
 
     @Override
@@ -53,13 +50,13 @@ public class StudentServiceImpl implements StudentService {
     public Page<StudentResponseDTO> getAllStudents(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
         return repo.findAll(pageable)
-                .map(student -> modelMapper.map(student, StudentResponseDTO.class));
+                .map(studentMapper::toDTO);
     }
 
     @Override
     public StudentResponseDTO getStudentById(Long id) {
         Student student = repo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
-        return modelMapper.map(student, StudentResponseDTO.class);
+        return studentMapper.toDTO(student);
     }
 }

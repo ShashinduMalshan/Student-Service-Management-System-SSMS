@@ -11,9 +11,4 @@ public class StudentServiceManagementSystemApplication {
     public static void main(String[] args) {
         SpringApplication.run(StudentServiceManagementSystemApplication.class, args);
     }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
 }
