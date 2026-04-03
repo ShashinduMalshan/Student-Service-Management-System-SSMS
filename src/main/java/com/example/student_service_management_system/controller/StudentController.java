@@ -33,10 +33,12 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<StudentResponseDTO> getAllStudents() {
-        return service.getAllStudents();
-    }
+    public Page<StudentResponseDTO> getAllStudents(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size) {
 
+        return service.getAllStudents(page, size);
+    }
 
     @GetMapping("/{id}")
     public StudentResponseDTO getStudent(@PathVariable Long id) {

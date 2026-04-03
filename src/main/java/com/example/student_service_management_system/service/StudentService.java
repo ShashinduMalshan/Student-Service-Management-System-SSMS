@@ -4,8 +4,6 @@ import com.example.student_service_management_system.dto.StudentRequestDTO;
 import com.example.student_service_management_system.dto.StudentResponseDTO;
 import org.springframework.data.domain.Page;
 
-import java.util.List;
-
 public interface StudentService {
 
     StudentResponseDTO addStudent(StudentRequestDTO dto);
@@ -14,7 +12,7 @@ public interface StudentService {
 
     void deleteStudent(Long id);
 
-    List<StudentResponseDTO> getAllStudents();
+    Page<StudentResponseDTO> getAllStudents(int page, int size);
 
     StudentResponseDTO getStudentById(Long id);
 }

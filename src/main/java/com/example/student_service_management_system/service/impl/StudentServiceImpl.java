@@ -1,7 +1,5 @@
 package com.example.student_service_management_system.service.impl;
 
-
-
 import com.example.student_service_management_system.dto.StudentRequestDTO;
 import com.example.student_service_management_system.dto.StudentResponseDTO;
 import com.example.student_service_management_system.entity.Student;
@@ -9,15 +7,19 @@ import com.example.student_service_management_system.exception.ResourceNotFoundE
 import com.example.student_service_management_system.repository.StudentRepository;
 import com.example.student_service_management_system.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
+
+
 
     private final StudentRepository repo;
 
@@ -54,11 +56,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<StudentResponseDTO> getAllStudents() {
-        return repo.findAll()
-                .stream()
-                .map(this::mapToDTO)
-                .collect(Collectors.toList());
+    public Page<StudentResponseDTO> getAllStudents(int page, int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+
+        Page<Student> studentPage = repo.findAll(pageable);
+
+        return studentPage.map(this::mapToDTO);
     }
 
     @Override
