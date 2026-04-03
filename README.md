@@ -237,7 +237,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
-> Replace `YOUR_DB_USERNAME` and `YOUR_DB_PASSWORD` with your actual credentials. **Do not commit passwords** to Git.
+> Replace `YOUR_DB_USERNAME` and `YOUR_DB_PASSWORD` with your actual credentials.
 
 ### H2 (In-Memory, Testing)
 
@@ -255,7 +255,9 @@ spring.jpa.show-sql=true
 
 ---
 
-This section clearly documents your database setup, shows both MySQL and H2 configurations, and ensures no secret keys are pushed to Git. It’s safe for others to follow while keeping your credentials secure.
+This section clearly documents your database setup, shows both MySQL and H2 configurations.
+
+---
 
 ##  API Endpoints
 
