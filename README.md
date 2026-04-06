@@ -21,29 +21,45 @@ Controller → Service → Repository → Database
 ###  Package Structure
 
 ```
-com.example.student_service_management_system
- ├─ controller
- │    └─ StudentController
- ├─ dto
- │    ├─ StudentRequestDTO
- │    └─ StudentResponseDTO
- ├─ entity
- │    └─ Student
- ├─ exception
- │    └─ ResourceNotFoundException
- ├─ repository
- │    └─ StudentRepository
- ├─ service
- │    ├─ StudentService
- │    └─ impl
- │         └─ StudentServiceImpl
- ├─ mapper
- │    └─ StudentMapper
- ├─ config
- │    └─ AppConfig
- └─ StudentServiceManagementSystemApplication
-```
+src
+ └── main
+     ├── java
+     │    └── com.example.student_service_management_system
+     │         ├── StudentServiceManagementSystemApplication.java
+     │         ├── config
+     │         │    ├── AppConfig.java
+     │         │    └── SupabaseConfig.java
+     │         ├── controller
+     │         │    └── StudentController.java
+     │         ├── dto
+     │         │    ├── StudentRequestDTO.java
+     │         │    └── StudentResponseDTO.java
+     │         ├── entity
+     │         │    └── Student.java
+     │         ├── exception
+     │         │    ├── GlobalExceptionHandler.java
+     │         │    ├── ResourceNotFoundException.java
+     │         │    └── SupabaseException.java
+     │         ├── mapper
+     │         │    └── StudentMapper.java
+     │         ├── repository
+     │         │    └── StudentRepository.java
+     │         └── service
+     │              ├── StudentService.java
+     │              ├── SupabaseService.java
+     │              └── impl
+     │                   ├── StudentServiceImpl.java
+     │                   └── SupabaseServiceImpl.java
+     └── resources
+          ├── application.properties
+          └── application-test.properties
 
+└── test
+     └── java
+          └── com.example.student_service_management_system
+               └── [test classes here]
+                
+```
 ---
 
 ##  Layer Explanation
