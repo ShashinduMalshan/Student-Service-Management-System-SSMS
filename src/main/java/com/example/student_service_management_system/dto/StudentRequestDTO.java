@@ -14,4 +14,7 @@ public class StudentRequestDTO {
 
     @NotBlank
     private String course;
+
+    private String profileImageUrl;
+
 }

@@ -16,5 +16,7 @@ public class StudentResponseDTO {
     private String email;
     private String course;
     private LocalDateTime createdAt;
+    private String profileImageUrl;
+
 
 }

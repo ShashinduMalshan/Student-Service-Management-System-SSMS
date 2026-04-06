@@ -70,4 +70,12 @@ public class StudentController {
         String imageUrl = service.updateProfile(id, file);
         return ResponseEntity.ok(imageUrl);
     }
+
+    @DeleteMapping("/{id}/profile-image")
+    public void updateProfileImage(
+            @PathVariable Long id) {
+        service.deleteProfile(id);
+
+    }
+
 }
