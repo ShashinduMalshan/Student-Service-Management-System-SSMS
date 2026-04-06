@@ -239,6 +239,17 @@ spring.jpa.show-sql=true
 
 > Replace `YOUR_DB_USERNAME` and `YOUR_DB_PASSWORD` with your actual credentials.
 
+## Supabase Configuration
+
+Before running the project, create an `application.properties` file with your Supabase credentials:
+
+```properties
+# Supabase configuration
+supabase.url=YOUR_SUPABASE_URL
+supabase.api.key=YOUR_SUPABASE_API_KEY
+supabase.bucket=YOUR_BUCKET_NAME
+````
+
 ### H2 (In-Memory, Testing)
 
 ```properties
