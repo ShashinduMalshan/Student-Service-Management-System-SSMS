@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Map;
+
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
 @RestController
@@ -72,10 +74,11 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}/profile-image")
-    public void updateProfileImage(
-            @PathVariable Long id) {
+    public ResponseEntity<Map<String, String>> deleteProfileImage(@PathVariable Long id) {
+
         service.deleteProfile(id);
 
+        return ResponseEntity.ok(Map.of("message", "Profile image deleted successfully"));
     }
 
 }
