@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
@@ -59,5 +61,13 @@ public class StudentController {
         StudentResponseDTO response = service.getStudentById(id);
         logger.info("Fetched student successfully with ID: {}", response.getId());
         return response;
+    }
+
+    @PutMapping("/{id}/profile-image")
+    public ResponseEntity<String> updateProfileImage(
+            @PathVariable Long id,
+            @RequestPart("file") MultipartFile file) {
+        String imageUrl = service.updateProfile(id, file);
+        return ResponseEntity.ok(imageUrl);
     }
 }

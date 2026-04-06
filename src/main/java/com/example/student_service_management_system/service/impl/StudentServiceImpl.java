@@ -7,6 +7,7 @@ import com.example.student_service_management_system.exception.ResourceNotFoundE
 import com.example.student_service_management_system.mapper.StudentMapper;
 import com.example.student_service_management_system.repository.StudentRepository;
 import com.example.student_service_management_system.service.StudentService;
+import com.example.student_service_management_system.service.SupabaseService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 
@@ -25,6 +27,8 @@ public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repo;
     private final StudentMapper studentMapper;
+    private final SupabaseService supabaseService;
+
 
     @Override
     public StudentResponseDTO addStudent(StudentRequestDTO dto) {
@@ -81,5 +85,66 @@ public class StudentServiceImpl implements StudentService {
                     return new ResourceNotFoundException("Student not found");
                 });
         return studentMapper.toDTO(student);
+    }
+
+
+    @Override
+    public String createProfile(Long studentId, MultipartFile file) {
+        Student student = repo.findById(studentId)
+                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+
+        if (file == null || file.isEmpty()) {
+            throw new IllegalArgumentException("File is empty");
+        }
+
+        String imageUrl = supabaseService.uploadFile(file);
+        student.setProfileImageUrl(imageUrl);
+        student.setUpdatedAt(LocalDateTime.now());
+        repo.save(student);
+
+        return imageUrl;
+    }
+
+    /**
+     * Update a student's profile image
+     */
+
+    @Override
+    public String updateProfile(Long studentId, MultipartFile file) {
+        Student student = repo.findById(studentId)
+                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+
+        if (file == null || file.isEmpty()) {
+            throw new IllegalArgumentException("File is empty");
+        }
+
+        // Optional: Delete previous image from Supabase if needed
+        if (student.getProfileImageUrl() != null) {
+            supabaseService.deleteFile(student.getProfileImageUrl());
+        }
+
+        String imageUrl = supabaseService.uploadFile(file);
+        student.setProfileImageUrl(imageUrl);
+        student.setUpdatedAt(LocalDateTime.now());
+        repo.save(student);
+
+        return imageUrl;
+    }
+
+    /**
+     * Delete a student's profile image
+     */
+
+    @Override
+    public void deleteProfile(Long studentId) {
+        Student student = repo.findById(studentId)
+                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+
+        if (student.getProfileImageUrl() != null) {
+            supabaseService.deleteFile(student.getProfileImageUrl());
+            student.setProfileImageUrl(null);
+            student.setUpdatedAt(LocalDateTime.now());
+            repo.save(student);
+        }
     }
 }

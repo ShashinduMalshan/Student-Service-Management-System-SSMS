@@ -28,6 +28,8 @@ public class Student {
     @NotBlank(message = "Course is required")
     private String course;
 
+    private String profileImageUrl;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }
