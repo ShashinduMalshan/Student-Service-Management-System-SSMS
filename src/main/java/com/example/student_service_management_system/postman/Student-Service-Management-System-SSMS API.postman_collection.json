@@ -76,14 +76,57 @@
       "response": []
     },
     {
-      "name": "Get Student by ID",
+      "name": "profile image update",
       "request": {
-        "method": "GET",
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "2711bac1-0eb8-483f-8317-ca540429c601",
+              "src": "/home/shasidu/Pictures/Screenshots/3.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/students/6/profile-image",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "students",
+            "6",
+            "profile-image"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "profile image delete",
+      "request": {
+        "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "gg",
+          "raw": "http://localhost:8080/api/v1/students/6/profile-image",
+          "protocol": "http",
           "host": [
-            "gg"
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "students",
+            "6",
+            "profile-image"
           ]
         }
       },
