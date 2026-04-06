@@ -88,22 +88,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
 
-    @Override
-    public String createProfile(Long studentId, MultipartFile file) {
-        Student student = repo.findById(studentId)
-                .orElseThrow(() -> new ResourceNotFoundException("Student not found"));
-
-        if (file == null || file.isEmpty()) {
-            throw new IllegalArgumentException("File is empty");
-        }
-
-        String imageUrl = supabaseService.uploadFile(file);
-        student.setProfileImageUrl(imageUrl);
-        student.setUpdatedAt(LocalDateTime.now());
-        repo.save(student);
-
-        return imageUrl;
-    }
 
     /**
      * Update a student's profile image

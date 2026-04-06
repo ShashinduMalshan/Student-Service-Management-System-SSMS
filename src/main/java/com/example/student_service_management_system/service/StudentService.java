@@ -17,8 +17,6 @@ public interface StudentService {
 
     StudentResponseDTO getStudentById(Long id);
 
-    String createProfile(Long studentId, MultipartFile file);
-
     String updateProfile(Long studentId, MultipartFile file);
 
     void deleteProfile(Long studentId);

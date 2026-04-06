@@ -489,3 +489,354 @@ org.springframework.web.HttpRequestMethodNotSupportedException: Request method '
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
 2026-04-06T13:01:17.498+05:30  WARN 35688 --- [Student Service Management System] [http-nio-8080-exec-6] c.e.s.exception.GlobalExceptionHandler   : Invalid argument: File is empty
+2026-04-06T13:20:38.629+05:30 ERROR 35688 --- [Student Service Management System] [http-nio-8080-exec-8] c.e.s.exception.GlobalExceptionHandler   : Unexpected error: Maximum upload size exceeded
+
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:126) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:112) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:88) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1102) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:947) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.apache.tomcat.util.http.InvalidParameterException: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2617) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.Request.getParts(Request.java:2439) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:540) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:95) ~[spring-web-7.0.6.jar:7.0.6]
+	... 38 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:64) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:160) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95) ~[na:na]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:119) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:468) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2576) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	... 41 common frames omitted
+
+2026-04-06T13:20:56.305+05:30  INFO 35688 --- [Student Service Management System] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06T13:20:56.308+05:30  INFO 35688 --- [Student Service Management System] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-06T13:20:56.311+05:30  INFO 35688 --- [Student Service Management System] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T13:20:56.313+05:30  INFO 35688 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-06T13:20:56.317+05:30  INFO 35688 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-06T13:20:58.300+05:30  INFO 36922 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Starting StudentServiceManagementSystemApplication using Java 21.0.8 with PID 36922 (/home/shasidu/Documents/ijse/Intern_project/Student Service Management System/target/classes started by shasidu in /home/shasidu/Documents/ijse/Intern_project/Student Service Management System)
+2026-04-06T13:20:58.302+05:30  INFO 36922 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-04-06T13:20:58.766+05:30  INFO 36922 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-06T13:20:58.792+05:30  INFO 36922 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2026-04-06T13:20:59.081+05:30  INFO 36922 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-06T13:20:59.089+05:30  INFO 36922 --- [Student Service Management System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-06T13:20:59.089+05:30  INFO 36922 --- [Student Service Management System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-06T13:20:59.110+05:30  INFO 36922 --- [Student Service Management System] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 765 ms
+2026-04-06T13:20:59.193+05:30  INFO 36922 --- [Student Service Management System] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-06T13:20:59.225+05:30  INFO 36922 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-06T13:20:59.437+05:30  INFO 36922 --- [Student Service Management System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-06T13:20:59.451+05:30  INFO 36922 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-06T13:20:59.632+05:30  INFO 36922 --- [Student Service Management System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44106e25
+2026-04-06T13:20:59.633+05:30  INFO 36922 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-06T13:20:59.663+05:30  WARN 36922 --- [Student Service Management System] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-06T13:20:59.675+05:30  INFO 36922 --- [Student Service Management System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/SSMS_System?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.5
+	Default catalog/schema: SSMS_System/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-06T13:21:00.161+05:30  INFO 36922 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-06T13:21:00.191+05:30  INFO 36922 --- [Student Service Management System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T13:21:00.234+05:30  INFO 36922 --- [Student Service Management System] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-06T13:21:00.315+05:30  WARN 36922 --- [Student Service Management System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-06T13:21:00.511+05:30  INFO 36922 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-06T13:21:00.515+05:30  INFO 36922 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Started StudentServiceManagementSystemApplication in 2.629 seconds (process running for 3.264)
+2026-04-06T13:21:02.210+05:30  INFO 36922 --- [Student Service Management System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06T13:21:02.210+05:30  INFO 36922 --- [Student Service Management System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-06T13:21:02.211+05:30  INFO 36922 --- [Student Service Management System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-06T13:21:02.238+05:30 ERROR 36922 --- [Student Service Management System] [http-nio-8080-exec-1] c.e.s.exception.GlobalExceptionHandler   : Unexpected error: Maximum upload size exceeded
+
+org.springframework.web.multipart.MaxUploadSizeExceededException: Maximum upload size exceeded
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.handleParseFailure(StandardMultipartHttpServletRequest.java:126) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:112) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.<init>(StandardMultipartHttpServletRequest.java:88) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.multipart.support.StandardServletMultipartResolver.resolveMultipart(StandardServletMultipartResolver.java:112) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.checkMultipart(DispatcherServlet.java:1102) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:947) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.apache.tomcat.util.http.InvalidParameterException: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2617) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.Request.getParts(Request.java:2439) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.RequestFacade.getParts(RequestFacade.java:540) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest.parseRequest(StandardMultipartHttpServletRequest.java:95) ~[spring-web-7.0.6.jar:7.0.6]
+	... 38 common frames omitted
+Caused by: org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+	at org.apache.tomcat.util.http.fileupload.impl.FileItemStreamImpl$1.raiseError(FileItemStreamImpl.java:117) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.checkLimit(LimitedInputStream.java:64) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.util.LimitedInputStream.read(LimitedInputStream.java:160) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:95) ~[na:na]
+	at org.apache.tomcat.util.http.fileupload.util.Streams.copy(Streams.java:119) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:468) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.Request.parseParts(Request.java:2576) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	... 41 common frames omitted
+
+2026-04-06T13:21:22.445+05:30  INFO 36922 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775461882445_3.png' to Supabase bucket 'student-images'
+2026-04-06T13:21:24.461+05:30  INFO 36922 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775461882445_3.png
+2026-04-06T14:17:53.759+05:30  INFO 36922 --- [Student Service Management System] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06T14:17:53.762+05:30  INFO 36922 --- [Student Service Management System] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-06T14:17:53.767+05:30  INFO 36922 --- [Student Service Management System] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:17:53.769+05:30  INFO 36922 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-06T14:17:53.773+05:30  INFO 36922 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-06T14:17:56.414+05:30  INFO 39009 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Starting StudentServiceManagementSystemApplication using Java 21.0.8 with PID 39009 (/home/shasidu/Documents/ijse/Intern_project/Student Service Management System/target/classes started by shasidu in /home/shasidu/Documents/ijse/Intern_project/Student Service Management System)
+2026-04-06T14:17:56.416+05:30  INFO 39009 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-04-06T14:17:56.846+05:30  INFO 39009 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-06T14:17:56.878+05:30  INFO 39009 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2026-04-06T14:17:57.144+05:30  INFO 39009 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-06T14:17:57.151+05:30  INFO 39009 --- [Student Service Management System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-06T14:17:57.159+05:30  INFO 39009 --- [Student Service Management System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-06T14:17:57.179+05:30  INFO 39009 --- [Student Service Management System] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 731 ms
+2026-04-06T14:17:57.285+05:30  INFO 39009 --- [Student Service Management System] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-06T14:17:57.323+05:30  INFO 39009 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-06T14:17:57.577+05:30  INFO 39009 --- [Student Service Management System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-06T14:17:57.593+05:30  INFO 39009 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-06T14:17:57.771+05:30  INFO 39009 --- [Student Service Management System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4552f905
+2026-04-06T14:17:57.773+05:30  INFO 39009 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-06T14:17:57.805+05:30  WARN 39009 --- [Student Service Management System] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-06T14:17:57.819+05:30  INFO 39009 --- [Student Service Management System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/SSMS_System?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.5
+	Default catalog/schema: SSMS_System/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-06T14:17:58.317+05:30  INFO 39009 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-06T14:17:58.357+05:30  INFO 39009 --- [Student Service Management System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:17:58.402+05:30  INFO 39009 --- [Student Service Management System] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-06T14:17:58.483+05:30  WARN 39009 --- [Student Service Management System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-06T14:17:58.701+05:30  INFO 39009 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-06T14:17:58.704+05:30  INFO 39009 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Started StudentServiceManagementSystemApplication in 2.603 seconds (process running for 3.047)
+2026-04-06T14:18:06.488+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06T14:18:06.488+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-06T14:18:06.489+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-06T14:18:06.516+05:30 ERROR 39009 --- [Student Service Management System] [http-nio-8080-exec-2] c.e.s.exception.GlobalExceptionHandler   : Unexpected error: Request method 'PUT' is not supported
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:260) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:434) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:376) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:116) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:68) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:544) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1157) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:951) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.20.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57) ~[tomcat-embed-core-11.0.20.jar:11.0.20]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-04-06T14:18:12.503+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : Deleting file '1775461882445_3.png' from Supabase bucket 'student-images'
+2026-04-06T14:18:13.451+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : File '1775461882445_3.png' deleted successfully
+2026-04-06T14:18:13.452+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775465293451_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:18:14.853+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775465293451_3.png
+2026-04-06T14:23:35.895+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-7] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775465615895_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:23:37.672+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-7] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775465615895_3.png
+2026-04-06T14:23:38.583+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-8] c.e.s.service.impl.SupabaseServiceImpl   : Deleting file '1775465615895_3.png' from Supabase bucket 'student-images'
+2026-04-06T14:23:39.124+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-8] c.e.s.service.impl.SupabaseServiceImpl   : File '1775465615895_3.png' deleted successfully
+2026-04-06T14:23:39.124+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-8] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775465619124_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:23:40.351+05:30  INFO 39009 --- [Student Service Management System] [http-nio-8080-exec-8] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775465619124_3.png
+2026-04-06T14:26:04.370+05:30  INFO 39009 --- [Student Service Management System] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06T14:26:04.373+05:30  INFO 39009 --- [Student Service Management System] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-06T14:26:04.376+05:30  INFO 39009 --- [Student Service Management System] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:26:04.379+05:30  INFO 39009 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-06T14:26:04.382+05:30  INFO 39009 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-06T14:26:07.445+05:30  INFO 39650 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Starting StudentServiceManagementSystemApplication using Java 21.0.8 with PID 39650 (/home/shasidu/Documents/ijse/Intern_project/Student Service Management System/target/classes started by shasidu in /home/shasidu/Documents/ijse/Intern_project/Student Service Management System)
+2026-04-06T14:26:07.447+05:30  INFO 39650 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-04-06T14:26:07.882+05:30  INFO 39650 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-06T14:26:07.907+05:30  INFO 39650 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2026-04-06T14:26:08.177+05:30  INFO 39650 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-06T14:26:08.187+05:30  INFO 39650 --- [Student Service Management System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-06T14:26:08.187+05:30  INFO 39650 --- [Student Service Management System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-06T14:26:08.208+05:30  INFO 39650 --- [Student Service Management System] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 733 ms
+2026-04-06T14:26:08.295+05:30  INFO 39650 --- [Student Service Management System] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-06T14:26:08.328+05:30  INFO 39650 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-06T14:26:08.581+05:30  INFO 39650 --- [Student Service Management System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-06T14:26:08.597+05:30  INFO 39650 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-06T14:26:08.791+05:30  INFO 39650 --- [Student Service Management System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11582db6
+2026-04-06T14:26:08.793+05:30  INFO 39650 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-06T14:26:08.836+05:30  WARN 39650 --- [Student Service Management System] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-06T14:26:08.848+05:30  INFO 39650 --- [Student Service Management System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/SSMS_System?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.5
+	Default catalog/schema: SSMS_System/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-06T14:26:09.328+05:30  INFO 39650 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-06T14:26:09.361+05:30  INFO 39650 --- [Student Service Management System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:26:09.409+05:30  INFO 39650 --- [Student Service Management System] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-06T14:26:09.500+05:30  WARN 39650 --- [Student Service Management System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-06T14:26:09.743+05:30  INFO 39650 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-06T14:26:09.746+05:30  INFO 39650 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Started StudentServiceManagementSystemApplication in 2.585 seconds (process running for 3.054)
+2026-04-06T14:38:50.396+05:30  INFO 39650 --- [Student Service Management System] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06T14:38:50.398+05:30  INFO 39650 --- [Student Service Management System] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-06T14:38:50.401+05:30  INFO 39650 --- [Student Service Management System] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:38:50.403+05:30  INFO 39650 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-06T14:38:50.409+05:30  INFO 39650 --- [Student Service Management System] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-06T14:41:03.621+05:30  INFO 41151 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Starting StudentServiceManagementSystemApplication using Java 21.0.8 with PID 41151 (/home/shasidu/Documents/ijse/Intern_project/Student Service Management System/target/classes started by shasidu in /home/shasidu/Documents/ijse/Intern_project/Student Service Management System)
+2026-04-06T14:41:03.624+05:30  INFO 41151 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : No active profile set, falling back to 1 default profile: "default"
+2026-04-06T14:41:04.006+05:30  INFO 41151 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-06T14:41:04.081+05:30  INFO 41151 --- [Student Service Management System] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2026-04-06T14:41:04.324+05:30  INFO 41151 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-06T14:41:04.331+05:30  INFO 41151 --- [Student Service Management System] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-06T14:41:04.332+05:30  INFO 41151 --- [Student Service Management System] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-06T14:41:04.353+05:30  INFO 41151 --- [Student Service Management System] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 701 ms
+2026-04-06T14:41:04.451+05:30  INFO 41151 --- [Student Service Management System] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-06T14:41:04.475+05:30  INFO 41151 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-06T14:41:04.687+05:30  INFO 41151 --- [Student Service Management System] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-06T14:41:04.706+05:30  INFO 41151 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-06T14:41:04.891+05:30  INFO 41151 --- [Student Service Management System] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12e40e98
+2026-04-06T14:41:04.892+05:30  INFO 41151 --- [Student Service Management System] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-06T14:41:04.925+05:30  WARN 41151 --- [Student Service Management System] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-06T14:41:04.935+05:30  INFO 41151 --- [Student Service Management System] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/SSMS_System?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.5
+	Default catalog/schema: SSMS_System/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-06T14:41:05.531+05:30  INFO 41151 --- [Student Service Management System] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-06T14:41:05.565+05:30  INFO 41151 --- [Student Service Management System] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-06T14:41:05.610+05:30  INFO 41151 --- [Student Service Management System] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-06T14:41:05.815+05:30  WARN 41151 --- [Student Service Management System] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-06T14:41:05.989+05:30  INFO 41151 --- [Student Service Management System] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-06T14:41:05.994+05:30  INFO 41151 --- [Student Service Management System] [main] tudentServiceManagementSystemApplication : Started StudentServiceManagementSystemApplication in 2.679 seconds (process running for 3.188)
+2026-04-06T14:41:09.256+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06T14:41:09.256+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-06T14:41:09.257+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-04-06T14:41:09.359+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] c.e.s.service.impl.SupabaseServiceImpl   : Deleting file '1775465619124_3.png' from Supabase bucket 'student-images'
+2026-04-06T14:41:11.770+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] c.e.s.service.impl.SupabaseServiceImpl   : File '1775465619124_3.png' deleted successfully
+2026-04-06T14:41:11.771+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775466671770_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:41:14.927+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-1] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775466671770_3.png
+2026-04-06T14:41:23.005+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-3] c.e.s.service.impl.SupabaseServiceImpl   : Deleting file '1775453885242_Screenshot from 2024-04-12 15-54-29.png' from Supabase bucket 'student-images'
+2026-04-06T14:41:23.978+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-3] c.e.s.service.impl.SupabaseServiceImpl   : File '1775453885242_Screenshot from 2024-04-12 15-54-29.png' deleted successfully
+2026-04-06T14:41:23.978+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-3] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775466683978_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:41:25.821+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-3] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775466683978_3.png
+2026-04-06T14:41:32.717+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775466692717_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:41:34.377+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-4] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775466692717_3.png
+2026-04-06T14:41:37.882+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-5] c.e.s.service.impl.SupabaseServiceImpl   : Deleting file '1775466692717_3.png' from Supabase bucket 'student-images'
+2026-04-06T14:41:38.268+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-5] c.e.s.service.impl.SupabaseServiceImpl   : File '1775466692717_3.png' deleted successfully
+2026-04-06T14:41:59.820+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-6] c.e.s.service.impl.SupabaseServiceImpl   : Uploading file '1775466719820_3.png' to Supabase bucket 'student-images'
+2026-04-06T14:42:01.430+05:30  INFO 41151 --- [Student Service Management System] [http-nio-8080-exec-6] c.e.s.service.impl.SupabaseServiceImpl   : File uploaded successfully. Public URL: https://hfmcaaoqsprxdhggaesj.supabase.co/storage/v1/object/public/student-images/1775466719820_3.png

@@ -63,7 +63,7 @@ public class StudentController {
         return response;
     }
 
-    @PutMapping("/{id}/profile-image")
+    @PatchMapping("/{id}/profile-image")
     public ResponseEntity<String> updateProfileImage(
             @PathVariable Long id,
             @RequestPart("file") MultipartFile file) {
