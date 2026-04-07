@@ -288,13 +288,15 @@ This section clearly documents your database setup, shows both MySQL and H2 conf
 
 ##  API Endpoints
 
-| Method | Endpoint                | Description                   |
-| ------ | ----------------------- | ----------------------------- |
-| POST   | `/api/v1/students`      | Add student                   |
-| PUT    | `/api/v1/students/{id}` | Update student                |
-| DELETE | `/api/v1/students/{id}` | Delete student                |
-| GET    | `/api/v1/students`      | Get all students (pagination) |
-| GET    | `/api/v1/students/{id}` | Get student by ID             |
+| Method | Endpoint                              | Description                   |
+|--------|---------------------------------------|-------------------------------|
+| POST   | `/api/v1/students`                    | Add student                   |
+| PUT    | `/api/v1/students/{id}`               | Update student                |
+| DELETE | `/api/v1/students/{id}`               | Delete student                |
+| GET    | `/api/v1/students`                    | Get all students (pagination) |
+| GET    | `/api/v1/students/{id}`               | Get student by ID             |
+| PATCH  | `/api/v1/students/{id}/profile-image` | Update student profile pic    |
+| DELETE | `/api/v1/students/{id}/profile-image` | Delete student profile pic    |
 
 ---
 

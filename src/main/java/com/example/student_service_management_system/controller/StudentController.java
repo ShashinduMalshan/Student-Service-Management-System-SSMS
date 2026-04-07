@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
 @RestController
